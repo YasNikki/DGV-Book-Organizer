@@ -97,6 +97,11 @@ public class database_funcoes_DAO {
             Logger.getLogger(database_funcoes_DAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        Livros_DGV_GUI.aluneCBX.setText("");
+        Livros_DGV_GUI.serieCBX.setText("");
+        Livros_DGV_GUI.livroCBX.setText("");
+        Livros_DGV_GUI.dataCBX.setText("");
+        
     }
     
     public static void verificaLivro(){
