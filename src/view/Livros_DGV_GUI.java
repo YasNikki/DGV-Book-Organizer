@@ -43,8 +43,8 @@ public class Livros_DGV_GUI extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         livroCBX = new javax.swing.JTextField();
-        dataCBX = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        dataCBX = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gerenciamento de Chaves");
@@ -130,12 +130,18 @@ public class Livros_DGV_GUI extends javax.swing.JFrame {
         jLabel3.setBounds(350, 10, 170, 20);
         PainelPrincipal.add(livroCBX);
         livroCBX.setBounds(350, 30, 170, 30);
-        PainelPrincipal.add(dataCBX);
-        dataCBX.setBounds(540, 30, 160, 30);
 
         jLabel4.setText("Data de Entrega");
         PainelPrincipal.add(jLabel4);
         jLabel4.setBounds(540, 10, 160, 20);
+
+        try {
+            dataCBX.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        PainelPrincipal.add(dataCBX);
+        dataCBX.setBounds(540, 30, 160, 30);
 
         javax.swing.GroupLayout panelImage1Layout = new javax.swing.GroupLayout(panelImage1);
         panelImage1.setLayout(panelImage1Layout);
@@ -192,6 +198,7 @@ public class Livros_DGV_GUI extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
+        new home_DGV_GUI().setVisible(true);
         this.dispose();
         
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -236,7 +243,7 @@ public class Livros_DGV_GUI extends javax.swing.JFrame {
     private javax.swing.JPanel FundoPrincipal;
     private javax.swing.JPanel PainelPrincipal;
     public static javax.swing.JTextField aluneCBX;
-    public static javax.swing.JTextField dataCBX;
+    public static javax.swing.JFormattedTextField dataCBX;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
